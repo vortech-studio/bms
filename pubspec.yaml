@@ -1,0 +1,41 @@
+name: bms
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  get: ^4.3.8
+
+  firebase_core: ^1.6.0
+  cloud_functions: ^3.0.3
+  firebase_storage: ^10.0.3
+  firebase_auth: ^3.1.1
+  firebase_messaging: ^10.0.7
+  firebase_analytics: ^8.3.2
+  firebase_crashlytics: ^2.2.1
+
+  connectivity_plus: ^1.1.0
+  intl: ^0.17.0
+  json_serializable: ^5.0.1
+
+  syncfusion_flutter_core: ^19.2.62
+  syncfusion_flutter_charts: ^19.2.62
+
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
