@@ -3,7 +3,6 @@
    <application
         android:label="bms"
         android:icon="@mipmap/ic_launcher">
-        <application android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
