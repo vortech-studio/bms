@@ -6,6 +6,7 @@ import 'package:bms/modules/login_module/widgets/pin_code_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../controller.dart';
 
@@ -28,14 +29,19 @@ class LoginMobilePage extends GetView<LoginController> {
                 ? Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 32.0),
                     child: Column(
-                      children: const [
-                        PinCodeField(),
+                      children: [
+                        const PinCodeField(),
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
                             onPressed: null,
                             child: Text(
                               'Resend OTP',
+                              style: GoogleFonts.montserrat(
+                                  textStyle: Theme.of(context)
+                                      .textTheme
+                                      .subtitle1!
+                                      .copyWith()),
                             ),
                           ),
                         ),

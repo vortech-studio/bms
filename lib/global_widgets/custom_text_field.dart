@@ -1,5 +1,6 @@
 import 'package:bms/core/values/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
@@ -24,7 +25,9 @@ class CustomTextField extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
       child: TextFormField(
-        style: Theme.of(context).textTheme.bodyText2,
+        style: GoogleFonts.montserrat(
+          textStyle: Theme.of(context).textTheme.bodyText2,
+        ),
         obscureText: isPassword,
         validator: (value) => validator(value),
         onChanged: (value) => onChanged(value),

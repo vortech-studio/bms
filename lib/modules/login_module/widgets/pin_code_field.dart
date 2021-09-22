@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bms/core/values/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinCodeField extends StatefulWidget {
@@ -38,9 +39,8 @@ class _PinCodeFieldState extends State<PinCodeField> {
       length: 6,
       obscureText: false,
       animationType: AnimationType.fade,
-      textStyle: const TextStyle(
-        fontWeight: FontWeight.w500,
-      ),
+      textStyle: GoogleFonts.montserrat(
+          textStyle: Theme.of(context).textTheme.headline6!.copyWith()),
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.box,
         borderRadius: BorderRadius.circular(8.0),
