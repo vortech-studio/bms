@@ -34,6 +34,7 @@ class AccountSetupMobilePage extends GetView<AccountSetupController> {
                 hintText: userNameHintText,
                 text: userNameHintText,
                 isPassword: false,
+                textInputType: TextInputType.name,
                 horizontalMargin: MediaQuery.of(context).size.width * .125,
                 onChanged: (value) =>
                     Get.find<AccountSetupController>().userName = value,

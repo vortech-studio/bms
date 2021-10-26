@@ -7,6 +7,7 @@ class CustomTextField extends StatelessWidget {
   final String text;
   final bool isPassword;
   final double horizontalMargin;
+  final TextInputType textInputType;
   final Function(String) onChanged;
   final Function(String?) validator;
 
@@ -16,6 +17,7 @@ class CustomTextField extends StatelessWidget {
       required this.text,
       required this.isPassword,
       required this.horizontalMargin,
+      required this.textInputType,
       required this.onChanged,
       required this.validator})
       : super(key: key);
@@ -25,6 +27,7 @@ class CustomTextField extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
       child: TextFormField(
+        keyboardType: textInputType,
         style: GoogleFonts.montserrat(
           textStyle: Theme.of(context).textTheme.bodyText2,
         ),

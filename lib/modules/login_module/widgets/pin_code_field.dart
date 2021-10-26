@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:bms/core/values/colors.dart';
+import 'package:bms/modules/login_module/controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -38,6 +40,7 @@ class _PinCodeFieldState extends State<PinCodeField> {
       appContext: context,
       length: 6,
       obscureText: false,
+      keyboardType: TextInputType.number,
       animationType: AnimationType.fade,
       textStyle: GoogleFonts.montserrat(
           textStyle: Theme.of(context).textTheme.headline6!.copyWith()),
@@ -59,17 +62,17 @@ class _PinCodeFieldState extends State<PinCodeField> {
       errorAnimationController: errorController,
       controller: textEditingController,
       showCursor: false,
-      onCompleted: (v) {
-        print("Completed");
+      onCompleted: (value) {
+        Get.find<LoginController>().code = value;
+        Get.find<LoginController>().verifyOTP();
       },
       onChanged: (value) {
-        print(value);
         setState(() {
           currentText = value;
         });
       },
       beforeTextPaste: (text) {
-        print("Allowing to paste $text");
+        // print("Allowing to paste $text");
         //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
         //but you can show anything you want here, like your pop up saying wrong paste format or etc
         return true;

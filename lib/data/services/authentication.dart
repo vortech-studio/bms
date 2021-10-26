@@ -19,7 +19,10 @@ class AuthenticationService extends GetxService {
       verificationCompleted: (PhoneAuthCredential credential) async {
         UserCredential userCredential =
             await auth.signInWithCredential(credential);
-        box.write('userCredential', userCredential);
+        box.write(
+          'isNewUser',
+          userCredential.additionalUserInfo!.isNewUser,
+        );
       },
       verificationFailed: (FirebaseAuthException e) {
         throw Exception(e);
@@ -37,7 +40,10 @@ class AuthenticationService extends GetxService {
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: verificationId, smsCode: smsCode);
     UserCredential userCredential = await auth.signInWithCredential(credential);
-    box.write('userCredential', userCredential);
+    box.write(
+      'isNewUser',
+      userCredential.additionalUserInfo!.isNewUser,
+    );
   }
 
   Future<ConfirmationResult> webVerifyPhoneNumber(String phoneNumber) async {
@@ -50,6 +56,9 @@ class AuthenticationService extends GetxService {
       ConfirmationResult confirmationResult, String verificationCode) async {
     UserCredential userCredential =
         await confirmationResult.confirm(verificationCode);
-    box.write('userCredential', userCredential);
+    box.write(
+      'isNewUser',
+      userCredential.additionalUserInfo!.isNewUser,
+    );
   }
 }

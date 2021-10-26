@@ -1,4 +1,3 @@
-import 'package:bms/modules/account_setup_module/controller.dart';
 import 'package:bms/modules/account_setup_module/page.dart';
 import 'package:bms/modules/login_module/binding.dart';
 import 'package:bms/modules/login_module/page.dart';
